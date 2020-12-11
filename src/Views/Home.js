@@ -1,42 +1,12 @@
-import { useEffect, useState } from "react";
 import Loader from "../Components/Loader";
 import ProductCard from "../Components/ProductCard";
-import axios from "axios";
+import useAxios from "../Hooks/HttpsRequests";
 
 export default function Home() {
   const url = `https://5fd2c4168cee610016adfa25.mockapi.io/products/`;
-  const [products, setProducts] = useState({
-    loading: false,
-    data: null,
-    error: false,
-  });
-  const items = products.data;
-  const errorCheck = products.error;
-
-  useEffect(() => {
-    setProducts({
-      loading: true,
-      data: null,
-      error: false,
-    });
-    axios
-      .get(url)
-      .then((res) =>
-        setProducts({
-          loading: false,
-          data: res.data,
-          error: false,
-        })
-      )
-      .catch((e) => {
-        console.log(e);
-        setProducts({
-          loading: false,
-          data: null,
-          error: true,
-        });
-      });
-  }, [url]);
+  let products = useAxios(url);
+  let items = products.data;
+  let errorCheck = products.error;
 
   return (
     <div className="container mx-auto">
