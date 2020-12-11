@@ -3,6 +3,7 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Home from "./Views/Home";
 import About from "./Views/About";
+import Product from "./Views/Product";
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
         <Header />
         <div className="p-3">
           <Switch>
+            <Route path="/product">
+              <Product />
+            </Route>
             <Route path="/about">
               <About />
             </Route>
