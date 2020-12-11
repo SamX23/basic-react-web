@@ -7,8 +7,8 @@ import Product from "./Views/Product";
 
 function App() {
   return (
-    <Router>
-      <div>
+    <div className="relative min-h-screen">
+      <Router>
         <Header />
         <div className="p-3">
           <Switch>
@@ -24,8 +24,8 @@ function App() {
           </Switch>
         </div>
         <Footer />
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }
 

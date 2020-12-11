@@ -21,15 +21,6 @@ export default function NavigationMenu({ closeMenu }) {
           About
         </Link>
       </li>
-      <li>
-        <Link
-          to="/products"
-          className="text-blue-500 py-3 border-b block"
-          onClick={closeMenu}
-        >
-          Product
-        </Link>
-      </li>
     </ul>
   );
 }
